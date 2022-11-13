@@ -21,7 +21,7 @@ public class Tablero {
         this.matriz = new int[this.numFilas][this.numColumnas];
     }
 
-    // Metodos get
+    // Metodos set
 
     public void setNumFilas(int numFilas) {
         this.numFilas = numFilas;
