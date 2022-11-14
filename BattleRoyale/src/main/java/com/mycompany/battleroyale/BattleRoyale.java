@@ -4,7 +4,7 @@
  */
 
 package com.mycompany.battleroyale;
-
+import javax.swing.JOptionPane; 
 /**
  *
  * @author andre
@@ -12,6 +12,11 @@ package com.mycompany.battleroyale;
 public class BattleRoyale {
 
     public static void main(String[] args) {
-       
+        //Se le solicitan al usuario los nombres de los jugadore
+        String jugador1 = JOptionPane.showInputDialog(
+                "Ingrese el nombre del jugador 1:");
+        String jugador2 = JOptionPane.showInputDialog(
+                "Ingrese el nombre del jugador 2:");
+
     }
 }
