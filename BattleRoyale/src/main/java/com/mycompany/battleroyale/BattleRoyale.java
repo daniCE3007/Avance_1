@@ -17,6 +17,12 @@ public class BattleRoyale {
                 "Ingrese el nombre del jugador 1:");
         String jugador2 = JOptionPane.showInputDialog(
                 "Ingrese el nombre del jugador 2:");
+        
+        //Se le pregunta al usuario contra quien quiere jugar
+        JOptionPane.showInputDialog(null, "Seleccione"
+                + " contra quien quiere jugar:\n"
+                + "1. PC\n"
+                + "2. Otro usuario");
 
 
         //Se crea el tablero (tamaño recomendado 15x15 para cumplir con el formato requerido)
