@@ -18,5 +18,12 @@ public class BattleRoyale {
         String jugador2 = JOptionPane.showInputDialog(
                 "Ingrese el nombre del jugador 2:");
 
+
+        //Se crea el tablero (tamaño recomendado 15x15 para cumplir con el formato requerido)
+        Tablero tablero1 = new Tablero(15,15);
+
+        tablero1.rellenarTablero();
+        tablero1.mostrarTablero();
+
     }
 }
