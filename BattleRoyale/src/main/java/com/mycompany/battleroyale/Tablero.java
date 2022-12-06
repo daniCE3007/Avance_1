@@ -4,6 +4,8 @@
  */
 package com.mycompany.battleroyale;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author andre
@@ -13,6 +15,13 @@ public class Tablero {
     private int numFilas;
     private int numColumnas;
     private String matriz[][];
+    private String matrizAtaque[][];
+    private Almirante almirante;
+    private Capitan capitan1;
+    private Capitan capitan2;
+    private Teniente teniente1;
+    private Teniente teniente2;
+    private Teniente teniente3;
 
     //Constructor vacio
     public Tablero(){
@@ -24,6 +33,13 @@ public class Tablero {
         this.numFilas = numFilas;
         this.numColumnas = numColumnas;
         this.matriz = new String [this.numFilas][this.numColumnas];
+        this.matrizAtaque = new String [this.numFilas][this.numColumnas];
+        this.almirante = new Almirante();
+        this.capitan1 = new Capitan();
+        this.capitan2 = new Capitan();
+        this.teniente1 = new Teniente();
+        this.teniente2 = new Teniente();
+        this.teniente3 = new Teniente();
     }
 
     // Metodos set
@@ -48,59 +64,281 @@ public class Tablero {
 
     public int getNumColumnas() {
         return numColumnas;
-    }  
+    }
+
+    public String[][] getMatriz() {
+        return matriz;
+    }
+
+    public String[][] getMatrizAtaque() {
+        return matrizAtaque;
+    }
+
+    public Almirante getAlmirante() {
+        return almirante;
+    }
+
+    public Capitan getCapitan1() {
+        return capitan1;
+    }
+
+    public Capitan getCapitan2() {
+        return capitan2;
+    }
+
+    public Teniente getTeniente1() {
+        return teniente1;
+    }
+
+    public Teniente getTeniente2() {
+        return teniente2;
+    }
+
+    public Teniente getTeniente3() {
+        return teniente3;
+    }
+
 
     // Metodo para rellenar el tablero
-    public void rellenarTablero(){
-        
-        int counter = 0;
-
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-
-                //Tablero
-                if (i == 0) {
-                    matriz[i][j] = " - ";
-                    matriz[0][0] = "- ";
-                    matriz[matriz.length - 1][matriz.length - 1] = " -";
-                } else if (i % 2 == 0) {
-                    matriz[i][j] = " - ";
-                    matriz[i][0] = "- ";
-                    matriz[i][matriz.length - 1] = " -";
-                } else if (i % 2 != 0 && j % 2 == 0) {
-                    matriz[i][j] = "  |  ";
-                    matriz[i][0] = "|  ";
-                    matriz[i][matriz.length - 1] = "  |";
-                } else if (j % 2 != 0 && i % 2 != 0) {
-                    matriz[i][j] = "~";
-                    if (i == 1) {
-                        matriz[1][j] = Integer.toString(counter);
-                        counter++;
-                    }
-
-                }
-
-                }
-            }
-
-            matriz[1][1] = "Ω";
-            matriz[3][1] = "A";
-            matriz[5][1] = "B";
-            matriz[7][1] = "C";
-            matriz[9][1] = "D";
-            matriz[11][1] = "E";
-            matriz[13][1] = "F";
+    public void rellenarTableros(){
+        Func.rellenarTablero(matriz);
+        Func.rellenarTablero(matrizAtaque);
     }
 
     // Metodo para mostrar el tablero
     public void mostrarTablero(){
-        
+        System.out.println("Tablero propio");
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 System.out.print(matriz[i][j]);
             }
             System.out.println("");
         }
+        System.out.println("");
+        System.out.println("*****************************************************");
+        System.out.println("");
         
     }
+
+    // Metodo para mostrar el tablero de ataque
+    public void mostrarTableroAtaque(){
+        System.out.println("Tablero de ataque");
+        for (int i = 0; i < matrizAtaque.length; i++) {
+            for (int j = 0; j < matrizAtaque[i].length; j++) {
+                System.out.print(matrizAtaque[i][j]);
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+        System.out.println("*****************************************************");
+        System.out.println("");
+        
+    }
+
+    // Metodo para colocar naves
+    public void colocarNaves(){
+
+        // Almirante
+        boolean almiranteColocado = false;
+
+        while (almiranteColocado == false) {
+            almirante.colocarAlmirante();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == almirante.getPosFilas() && j == almirante.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = almirante.getCharString();
+                            JOptionPane.showMessageDialog(null, "Almirante colocado");
+                            almiranteColocado = true;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Capitan 1
+        boolean capitan1Colocado = false;
+
+        while (capitan1Colocado == false) {
+            capitan1.colocarCapitan();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == capitan1.getPosFilas() && j == capitan1.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = capitan1.getCharString();
+                            JOptionPane.showMessageDialog(null, "Capitan 1 colocado");
+                            capitan1Colocado = true;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Capitan 2
+        boolean capitan2Colocado = false;
+
+        while (capitan2Colocado == false) {
+            capitan2.colocarCapitan();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == capitan2.getPosFilas() && j == capitan2.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = capitan2.getCharString();
+                            JOptionPane.showMessageDialog(null, "Capitan 2 colocado");
+                            capitan2Colocado = true;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Teniente 1
+        boolean teniente1Colocado = false;
+
+        while (teniente1Colocado == false) {
+            teniente1.colocarTeniente();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == teniente1.getPosFilas() && j == teniente1.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = teniente1.getCharString();
+                            JOptionPane.showMessageDialog(null, "Teniente 1 colocado");
+                            teniente1Colocado = true;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Teniente 2
+        boolean teniente2Colocado = false;
+
+        while (teniente2Colocado == false) {
+            teniente2.colocarTeniente();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == teniente2.getPosFilas() && j == teniente2.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = teniente2.getCharString();
+                            JOptionPane.showMessageDialog(null, "Teniente 2 colocado");
+                            teniente2Colocado = true;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Teniente 3
+        boolean teniente3Colocado = false;
+
+        while (teniente3Colocado == false) {
+            teniente3.colocarTeniente();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == teniente3.getPosFilas() && j == teniente3.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = teniente3.getCharString();
+                            JOptionPane.showMessageDialog(null, "Teniente 3 colocado");
+                            teniente3Colocado = true;
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+        
+        
+    }
+
+    // Metodo para actualizar naves
+    public void updateTablero(){
+
+        // Almirante
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == almirante.getPosFilas() && j == almirante.getPosColumnas()) {
+                        matriz[i][j] = almirante.getCharString();
+                }
+            }
+        }
+
+        // Capitan 1
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == capitan1.getPosFilas() && j == capitan1.getPosColumnas()) {
+                        matriz[i][j] = capitan1.getCharString();
+                }
+            }
+        }
+        
+        // Capitan 2
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == capitan2.getPosFilas() && j == capitan2.getPosColumnas()) {
+                        matriz[i][j] = capitan2.getCharString();
+                }
+            }
+        }
+        
+        // Teniente 1
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == teniente1.getPosFilas() && j == teniente1.getPosColumnas()) {
+                        matriz[i][j] = teniente1.getCharString();
+                }
+            }
+        }
+
+        // Teniente 2
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == teniente2.getPosFilas() && j == teniente2.getPosColumnas()) {
+                        matriz[i][j] = teniente2.getCharString();
+                }
+            }
+        }
+        
+        // Teniente 3
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == teniente3.getPosFilas() && j == teniente3.getPosColumnas()) {
+                        matriz[i][j] = teniente3.getCharString();
+                }
+            }
+        }
+        
+        
+        
+    }
+
+
 }
