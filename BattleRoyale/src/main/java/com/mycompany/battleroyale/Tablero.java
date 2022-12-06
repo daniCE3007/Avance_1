@@ -146,13 +146,16 @@ public class Tablero {
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
     
-                    if (i == almirante.getPosFilas() && j == almirante.getPosColumnas()) {
+                    if (i == almirante.getPosFilas() && j == 
+                            almirante.getPosColumnas()) {
                         if (matriz[i][j].equals("~")) {
                             matriz[i][j] = almirante.getCharString();
-                            JOptionPane.showMessageDialog(null, "Almirante colocado");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Almirante colocado");
                             almiranteColocado = true;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Posicion ocupada");
                         }
     
     
@@ -169,13 +172,16 @@ public class Tablero {
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
     
-                    if (i == capitan1.getPosFilas() && j == capitan1.getPosColumnas()) {
+                    if (i == capitan1.getPosFilas() && j == 
+                            capitan1.getPosColumnas()) {
                         if (matriz[i][j].equals("~")) {
                             matriz[i][j] = capitan1.getCharString();
-                            JOptionPane.showMessageDialog(null, "Capitan 1 colocado");
+                            JOptionPane.showMessageDialog(null,
+                                    "Capitan 1 colocado");
                             capitan1Colocado = true;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Posicion ocupada");
                         }
     
     
@@ -192,13 +198,16 @@ public class Tablero {
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
     
-                    if (i == capitan2.getPosFilas() && j == capitan2.getPosColumnas()) {
+                    if (i == capitan2.getPosFilas() && j == 
+                            capitan2.getPosColumnas()) {
                         if (matriz[i][j].equals("~")) {
                             matriz[i][j] = capitan2.getCharString();
-                            JOptionPane.showMessageDialog(null, "Capitan 2 colocado");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Capitan 2 colocado");
                             capitan2Colocado = true;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Posicion ocupada");
                         }
     
     
@@ -215,16 +224,17 @@ public class Tablero {
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
     
-                    if (i == teniente1.getPosFilas() && j == teniente1.getPosColumnas()) {
+                    if (i == teniente1.getPosFilas() && j ==
+                            teniente1.getPosColumnas()) {
                         if (matriz[i][j].equals("~")) {
                             matriz[i][j] = teniente1.getCharString();
-                            JOptionPane.showMessageDialog(null, "Teniente 1 colocado");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Teniente 1 colocado");
                             teniente1Colocado = true;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Posicion ocupada");
                         }
-    
-    
                     }
                 }
             }
@@ -238,13 +248,16 @@ public class Tablero {
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
     
-                    if (i == teniente2.getPosFilas() && j == teniente2.getPosColumnas()) {
+                    if (i == teniente2.getPosFilas() && j ==
+                            teniente2.getPosColumnas()) {
                         if (matriz[i][j].equals("~")) {
                             matriz[i][j] = teniente2.getCharString();
-                            JOptionPane.showMessageDialog(null, "Teniente 2 colocado");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Teniente 2 colocado");
                             teniente2Colocado = true;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Posicion ocupada");
                         }
     
     
@@ -261,13 +274,16 @@ public class Tablero {
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++) {
     
-                    if (i == teniente3.getPosFilas() && j == teniente3.getPosColumnas()) {
+                    if (i == teniente3.getPosFilas() && j 
+                            == teniente3.getPosColumnas()) {
                         if (matriz[i][j].equals("~")) {
                             matriz[i][j] = teniente3.getCharString();
-                            JOptionPane.showMessageDialog(null, "Teniente 3 colocado");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Teniente 3 colocado");
                             teniente3Colocado = true;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Posicion ocupada");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Posicion ocupada");
                         }
     
     

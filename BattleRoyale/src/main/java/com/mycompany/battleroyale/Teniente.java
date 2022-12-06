@@ -62,6 +62,18 @@ public class Teniente {
         setPosFilas(posFila);
         setPosColumnas(posColumna);
     }
+    
+    public void colocarTenienteRandom(){
+        int posFila;
+        int posColumna;
+
+        posFila = Func.colocarPosFilaRandom(nombreNave);
+        posColumna = Func.colocarPosColumnaRandom(nombreNave);
+
+        setPosFilas(posFila);
+        setPosColumnas(posColumna);
+    }
+
 
     //Metodo para verificar si el teniente esta vivo
     public void estaVivo(){

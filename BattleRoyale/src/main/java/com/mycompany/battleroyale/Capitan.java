@@ -62,6 +62,18 @@ public class Capitan {
         setPosFilas(posFila);
         setPosColumnas(posColumna);
     }
+    
+     public void colocarCapitanRandom(){
+        int posFila;
+        int posColumna;
+
+        posFila = Func.colocarPosFilaRandom(nombreNave);
+        posColumna = Func.colocarPosColumnaRandom(nombreNave);
+
+        setPosFilas(posFila);
+        setPosColumnas(posColumna);
+    }
+
 
     //Metodo para verificar si el capitan esta vivo
     public void estaVivo(){

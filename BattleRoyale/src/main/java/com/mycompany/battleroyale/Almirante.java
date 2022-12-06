@@ -71,17 +71,17 @@ public class Almirante {
         setPosColumnas(posColumna);
     }
 
-    //Metodo colocar almirante random
-    // public void colocarAlmiranteRandom(){
-    //     int posFila;
-    //     int posColumna;
+    
+    public void colocarAlmiranteRandom() {
+        int posFila;
+        int posColumna;
 
-    //     posFila = Func.colocarPosFilaRandom();
-    //     posColumna = Func.colocarPosColumnaRandom();
+        posFila = Func.colocarPosFilaRandom(nombreNave);
+        posColumna = Func.colocarPosColumnaRandom(nombreNave);
 
-    //     setPosFilas(posFila);
-    //     setPosColumnas(posColumna);
-    // }
+        setPosFilas(posFila);
+        setPosColumnas(posColumna);
+    }
 
     //Metodo para verificar si el almirante esta vivo
     public void estaVivo(){
