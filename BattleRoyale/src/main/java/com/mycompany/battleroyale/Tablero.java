@@ -292,9 +292,153 @@ public class Tablero {
             }
         }
         
+        JOptionPane.showMessageDialog(null, "Naves colocadas manualmente con exito");
         
     }
 
+    // Metodo para colocar naves
+    public void colocarNavesRandom(){
+
+        // Almirante
+        boolean almiranteColocado = false;
+
+        while (almiranteColocado == false) {
+            almirante.colocarAlmiranteRandom();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == almirante.getPosFilas() && j == 
+                            almirante.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = almirante.getCharString();
+                            almiranteColocado = true;
+                        } else {
+                            almiranteColocado = false;
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Capitan 1
+        boolean capitan1Colocado = false;
+
+        while (capitan1Colocado == false) {
+            capitan1.colocarCapitanRandom();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == capitan1.getPosFilas() && j == 
+                            capitan1.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = capitan1.getCharString();
+                            capitan1Colocado = true;
+                        } else {
+                            capitan1Colocado = false;
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Capitan 2
+        boolean capitan2Colocado = false;
+
+        while (capitan2Colocado == false) {
+            capitan2.colocarCapitanRandom();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == capitan2.getPosFilas() && j == 
+                            capitan2.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = capitan2.getCharString();
+                            capitan2Colocado = true;
+                        } else {
+                            capitan2Colocado = false;
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Teniente 1
+        boolean teniente1Colocado = false;
+
+        while (teniente1Colocado == false) {
+            teniente1.colocarTenienteRandom();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == teniente1.getPosFilas() && j ==
+                            teniente1.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = teniente1.getCharString();
+                            teniente1Colocado = true;
+                        } else {
+                            teniente1Colocado = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Teniente 2
+        boolean teniente2Colocado = false;
+
+        while (teniente2Colocado == false) {
+            teniente2.colocarTenienteRandom();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == teniente2.getPosFilas() && j ==
+                            teniente2.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = teniente2.getCharString();
+                            teniente2Colocado = true;
+                        } else {
+                            teniente2Colocado = false;
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+
+        // Teniente 3
+        boolean teniente3Colocado = false;
+
+        while (teniente3Colocado == false) {
+            teniente3.colocarTenienteRandom();
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+    
+                    if (i == teniente3.getPosFilas() && j 
+                            == teniente3.getPosColumnas()) {
+                        if (matriz[i][j].equals("~")) {
+                            matriz[i][j] = teniente3.getCharString();
+                            teniente3Colocado = true;
+                        } else {
+                            teniente3Colocado = false;
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "Naves colocadas automaticamente con exito");
+        
+    }
+    
     // Metodo para actualizar naves
     public void updateTablero(){
 
@@ -356,5 +500,6 @@ public class Tablero {
         
     }
 
+    
 
 }
