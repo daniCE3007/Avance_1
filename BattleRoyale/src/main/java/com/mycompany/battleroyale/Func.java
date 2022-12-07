@@ -355,5 +355,13 @@ public class Func {
             matriz[11][1] = "E";
             matriz[13][1] = "F";
     }
+    
+        public static String GenNumeroRandom() {
+            int generador = (int) (Math.random() * 6)+1;
+            String numero = String.valueOf(generador);
+        return numero;
+        
+    }
+
 
 }
