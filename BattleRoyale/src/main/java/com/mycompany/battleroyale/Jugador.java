@@ -12,12 +12,12 @@ public class Jugador {
     
     private String nombre;
     private int vida;
-    private Tablero[] tablero;
+    private Tablero tablero;
 
     public Jugador() {
     }
 
-    public Jugador(String nombre, int vida, Tablero[] tablero) {
+    public Jugador(String nombre, int vida, Tablero tablero) {
         this.nombre = nombre;
         this.vida = vida;
         this.tablero = tablero;
@@ -31,7 +31,7 @@ public class Jugador {
         return vida;
     }
 
-    public Tablero[] getTablero() {
+    public Tablero getTablero() {
         return tablero;
     }
 
@@ -43,7 +43,7 @@ public class Jugador {
         this.vida = vida;
     }
 
-    public void setTablero(Tablero[] tablero) {
+    public void setTablero(Tablero tablero) {
         this.tablero = tablero;
     }
   
