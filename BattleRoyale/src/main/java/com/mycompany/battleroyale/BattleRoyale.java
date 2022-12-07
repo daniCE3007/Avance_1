@@ -27,7 +27,7 @@ public class BattleRoyale {
                 String jugador1Nombre = JOptionPane.showInputDialog(
                         "Ingrese el nombre del jugador 1:");
 
-                Jugador jugador1 = new Jugador(jugador1Nombre, 13, new Tablero(15,15));
+                Jugador jugador1 = new Jugador(jugador1Nombre, new Tablero(15,15));
                 jugador1.getTablero().rellenarTableros();
 
                 //Menu elegir contra quien jugar
@@ -49,17 +49,40 @@ public class BattleRoyale {
                             String jugador2Nombre = JOptionPane.showInputDialog(
                                     "Ingrese el nombre del jugador 2:");
                             
-                            Jugador jugador2 = new Jugador(jugador2Nombre, 13, new Tablero(15,15));
+                            Jugador jugador2 = new Jugador(jugador2Nombre, new Tablero(15,15));
                             jugador2.getTablero().rellenarTableros();
 
                             Menu.menuColocarNaves(jugador2);
 
+                            while (jugador1.getTablero().getVida() > 0 || jugador2.getTablero().getVida() > 0) {
+                                //Se inicia el juego
+                                //Ataca el jugador 1
+                                System.out.println("Turno de " + jugador1.getNombre() + ":");
+                                Menu.menuPartidaAtaque(jugador2.getTablero(), jugador1.getTablero());
+                                System.out.println("");
+
+                                //Ataca la CPU
+                                System.out.println("Turno de " + jugador2.getNombre() + ":");
+                                Func.atacarRandom(jugador1.getTablero(), jugador2.getTablero());
+                                System.out.println("");
+                                
+                            }
+                            if (jugador1.getTablero().getVida()==0){
+                                JOptionPane.showMessageDialog(null, 
+                                        "Ganó "+ jugador2.getNombre());
+                            } else if (jugador2.getTablero().getVida()==0){
+                                JOptionPane.showMessageDialog(null, 
+                                        "Ganó "+ jugador1.getNombre());
+                            }
+                            break;
+                                
+                            
                         } else if (menuJugadorCPU == 2) {
                             //Crear CPU y flujo CPU
                             Menu.menuColocarNaves(jugador1);
 
                             //Se crea CPU
-                            CPU cpu = new CPU("CPU", 13, new Tablero(15,15));
+                            CPU cpu = new CPU("CPU", new Tablero(15,15));
                             cpu.getTablero().rellenarTableros();
                             
                             
@@ -67,18 +90,28 @@ public class BattleRoyale {
                             cpu.getTablero().colocarNavesRandom();
                             JOptionPane.showMessageDialog(null, "Naves de la CPU colocadas");
 
-                            while (jugador1.getVida() > 0 || cpu.getVida() > 0) {
+                            while (jugador1.getTablero().getVida()> 0 || cpu.getTablero().getVida() > 0) {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
                                 System.out.println("Turno de " + jugador1.getNombre() + ":");
-                                Menu.menuJugadorCPU(cpu.getTablero(), jugador1.getTablero());
+                                Menu.menuPartidaAtaque(cpu.getTablero(), jugador1.getTablero());
                                 System.out.println("");
+                            
 
                                 //Ataca la CPU
                                 System.out.println("Turno de " + cpu.getNombre() + ":");
                                 Func.atacarRandom(jugador1.getTablero(), cpu.getTablero());
                                 System.out.println("");
+                                System.out.println("Enemigo: "+ cpu.getTablero().getVida());
                             }
+                            if (jugador1.getTablero().getVida()==0){
+                                JOptionPane.showMessageDialog(null, 
+                                        "Ganó "+ cpu.getNombre());
+                            } else if (cpu.getTablero().getVida()==0){
+                                JOptionPane.showMessageDialog(null, 
+                                        "Ganó "+ jugador1.getNombre());
+                            }
+                            
                             break;
 
                         } else if (menuJugadorCPU == 3) {

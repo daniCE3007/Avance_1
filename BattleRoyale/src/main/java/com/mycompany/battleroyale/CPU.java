@@ -13,24 +13,18 @@ import javax.swing.JOptionPane;
 public class CPU {
     
     private String nombre;
-    private int vida;
     private Tablero tablero;
 
     public CPU() {
     }
 
-    public CPU(String nombre, int vida, Tablero tablero) {
+    public CPU(String nombre, Tablero tablero) {
         this.nombre = "CPU";
-        this.vida = vida;
         this.tablero = tablero;
     }
 
     public String getNombre() {
         return nombre;
-    }
-
-    public int getVida() {
-        return vida;
     }
 
     public Tablero getTablero() {
@@ -39,10 +33,6 @@ public class CPU {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
     }
 
     public void setTablero(Tablero tablero) {

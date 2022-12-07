@@ -11,24 +11,18 @@ package com.mycompany.battleroyale;
 public class Jugador {
     
     private String nombre;
-    private int vida;
     private Tablero tablero;
 
     public Jugador() {
     }
 
-    public Jugador(String nombre, int vida, Tablero tablero) {
+    public Jugador(String nombre, Tablero tablero) {
         this.nombre = nombre;
-        this.vida = vida;
         this.tablero = tablero;
     }
 
     public String getNombre() {
         return nombre;
-    }
-
-    public int getVida() {
-        return vida;
     }
 
     public Tablero getTablero() {
@@ -39,12 +33,9 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public void setVida(int vida) {
-        this.vida = vida;
-    }
 
     public void setTablero(Tablero tablero) {
         this.tablero = tablero;
     }
-  
+      
 }

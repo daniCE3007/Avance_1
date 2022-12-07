@@ -22,6 +22,7 @@ public class Tablero {
     private Teniente teniente1;
     private Teniente teniente2;
     private Teniente teniente3;
+    private int vida = 13;
 
     //Constructor vacio
     public Tablero(){
@@ -40,6 +41,7 @@ public class Tablero {
         this.teniente1 = new Teniente();
         this.teniente2 = new Teniente();
         this.teniente3 = new Teniente();
+        this.vida = 13;
     }
 
     // Metodos set
@@ -55,6 +57,11 @@ public class Tablero {
     public void setMatriz(String[][] matriz) {
         this.matriz = matriz;
     }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+    
     
     // Metodos get
 
@@ -97,6 +104,12 @@ public class Tablero {
     public Teniente getTeniente3() {
         return teniente3;
     }
+
+    public int getVida() {
+        return vida;
+    }
+    
+    
 
 
     // Metodo para rellenar el tablero
@@ -495,11 +508,11 @@ public class Tablero {
                 }
             }
         }
-        
-        
-        
+
     }
 
-    
-
+    public void updateVidaGlobal() {
+        vida--;
+    }
+  
 }

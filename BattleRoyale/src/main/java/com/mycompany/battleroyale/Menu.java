@@ -48,7 +48,7 @@ public class Menu {
         }
     }
 
-    public static void menuJugadorCPU(Tablero tableroEnemigo, Tablero tableroPropio) {
+    public static void menuPartidaAtaque(Tablero tableroEnemigo, Tablero tableroPropio) {
         //Menu colocacion de naves jugador
         int menuAtaque = 0;
 
