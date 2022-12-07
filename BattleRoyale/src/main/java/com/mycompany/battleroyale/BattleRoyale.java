@@ -54,7 +54,7 @@ public class BattleRoyale {
 
                             Menu.menuColocarNaves(jugador2);
 
-                            while (jugador1.getTablero().getVida() > 0 || jugador2.getTablero().getVida() > 0) {
+                            do {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
                                 System.out.println("Turno de " + jugador1.getNombre() + ":");
@@ -66,15 +66,17 @@ public class BattleRoyale {
                                 Func.atacarRandom(jugador1.getTablero(), jugador2.getTablero());
                                 System.out.println("");
                                 
-                            }
+                            } while (jugador1.getTablero().getVida() != 0 && jugador2.getTablero().getVida() != 0);
                             if (jugador1.getTablero().getVida()==0){
                                 JOptionPane.showMessageDialog(null, 
                                         "Ganó "+ jugador2.getNombre());
+                                break;
                             } else if (jugador2.getTablero().getVida()==0){
                                 JOptionPane.showMessageDialog(null, 
                                         "Ganó "+ jugador1.getNombre());
+                                break;
                             }
-                            break;
+                            
                                 
                             
                         } else if (menuJugadorCPU == 2) {
@@ -90,29 +92,31 @@ public class BattleRoyale {
                             cpu.getTablero().colocarNavesRandom();
                             JOptionPane.showMessageDialog(null, "Naves de la CPU colocadas");
 
-                            while (jugador1.getTablero().getVida()> 0 || cpu.getTablero().getVida() > 0) {
+                            do {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
                                 System.out.println("Turno de " + jugador1.getNombre() + ":");
                                 Menu.menuPartidaAtaque(cpu.getTablero(), jugador1.getTablero());
                                 System.out.println("");
-                            
 
                                 //Ataca la CPU
                                 System.out.println("Turno de " + cpu.getNombre() + ":");
                                 Func.atacarRandom(jugador1.getTablero(), cpu.getTablero());
                                 System.out.println("");
-                                System.out.println("Enemigo: "+ cpu.getTablero().getVida());
-                            }
-                            if (jugador1.getTablero().getVida()==0){
-                                JOptionPane.showMessageDialog(null, 
-                                        "Ganó "+ cpu.getNombre());
-                            } else if (cpu.getTablero().getVida()==0){
-                                JOptionPane.showMessageDialog(null, 
-                                        "Ganó "+ jugador1.getNombre());
+                                JOptionPane.showMessageDialog(null, "Enemigo: " + cpu.getTablero().getVida());
+
+                            } while (jugador1.getTablero().getVida() != 0 && cpu.getTablero().getVida() != 0);
+
+                            if (jugador1.getTablero().getVida() == 0) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Ganó " + cpu.getNombre());
+                                break;
+                            } else if (cpu.getTablero().getVida() == 0) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Ganó " + jugador1.getNombre());
+                                break;
                             }
                             
-                            break;
 
                         } else if (menuJugadorCPU == 3) {
                             JOptionPane.showMessageDialog(null, "Volviedo...");

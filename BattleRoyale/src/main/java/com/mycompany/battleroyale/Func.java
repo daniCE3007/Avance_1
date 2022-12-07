@@ -198,6 +198,7 @@ public class Func {
                     tableroEnemigo.getAlmirante().getPosColumnas() == columna) {
                 // tableroEnemigo.getAlmirante().setVidas(tableroEnemigo.getAlmirante().getVidas() - 1);
                 tableroEnemigo.getAlmirante().updateVidas();
+                tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getAlmirante().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
                             + "barco ha sido destruido");
@@ -207,6 +208,7 @@ public class Func {
                     tableroEnemigo.getCapitan1().getPosColumnas() == columna) {
                 // tableroEnemigo.getCapitan1().setVidas(tableroEnemigo.getCapitan1().getVidas() - 1);
                 tableroEnemigo.getCapitan1().updateVidas();
+                tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getCapitan1().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
                             + "barco ha sido destruido");
@@ -216,6 +218,7 @@ public class Func {
                     tableroEnemigo.getCapitan2().getPosColumnas() == columna) {
                 // tableroEnemigo.getCapitan2().setVidas(tableroEnemigo.getCapitan2().getVidas() - 1);
                 tableroEnemigo.getCapitan2().updateVidas();
+                tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getCapitan2().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El"
                             + " barco ha sido destruido");
@@ -225,6 +228,7 @@ public class Func {
                     tableroEnemigo.getTeniente1().getPosColumnas() == columna) {
                 // tableroEnemigo.getTeniente1().setVidas(tableroEnemigo.getTeniente1().getVidas() - 1);
                 tableroEnemigo.getTeniente1().updateVidas();
+                tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente1().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
                             + "barco ha sido destruido");
@@ -234,6 +238,7 @@ public class Func {
                     tableroEnemigo.getTeniente2().getPosColumnas() == columna) {
                 // tableroEnemigo.getTeniente2().setVidas(tableroEnemigo.getTeniente2().getVidas() - 1);
                 tableroEnemigo.getTeniente2().updateVidas();
+                tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente2().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
                             + "barco ha sido destruido");
@@ -243,6 +248,7 @@ public class Func {
                     tableroEnemigo.getTeniente3().getPosColumnas() == columna) {
                 // tableroEnemigo.getTeniente3().setVidas(tableroEnemigo.getTeniente3().getVidas() - 1);
                 tableroEnemigo.getTeniente3().updateVidas();
+                tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente3().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El"
                             + " barco ha sido destruido");
