@@ -47,7 +47,4 @@ public class CPU {
         this.tablero = tablero;
     }
     
-}
-
-    
-}
+}   

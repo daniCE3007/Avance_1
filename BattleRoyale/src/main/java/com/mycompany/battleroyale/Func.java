@@ -3,6 +3,14 @@ import javax.swing.JOptionPane;
 
 public class Func {
     
+    // Generador de numero random 1 al 6
+    public static String GenNumeroRandom() {
+        int generador = (int) (Math.random() * 6) + 1;
+        String numero = String.valueOf(generador);
+        return numero;
+
+    }
+    
     //Funciones para convertir las posiciones de las filas y columnas en posiciones de matriz para colocar
     public static int colocarPosFila(String nombreNave){
         int fila = 0;
@@ -83,7 +91,7 @@ public class Func {
         boolean set = false;
 
         while (set == false) {
-            String opcionUsuario = CPU.GenNumeroRandom();     
+            String opcionUsuario = GenNumeroRandom();     
             
             if (opcionUsuario.equals("1")) {
                 fila = 3;
@@ -116,7 +124,7 @@ public class Func {
         boolean set = false;
 
         while (set == false) {
-            String opcionUsuario = CPU.GenNumeroRandom();
+            String opcionUsuario = GenNumeroRandom();
             
             if (opcionUsuario.equals("1")) {
                 columna = 3;
@@ -355,13 +363,5 @@ public class Func {
             matriz[11][1] = "E";
             matriz[13][1] = "F";
     }
-    
-        public static String GenNumeroRandom() {
-            int generador = (int) (Math.random() * 6)+1;
-            String numero = String.valueOf(generador);
-        return numero;
-        
-    }
-
 
 }

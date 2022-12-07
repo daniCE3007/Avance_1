@@ -8,16 +8,16 @@ package com.mycompany.battleroyale;
  *
  * @author andre
  */
-public class jugador {
+public class Jugador {
     
     private String nombre;
     private int vida;
     private Tablero[] tablero;
 
-    public jugador() {
+    public Jugador() {
     }
 
-    public jugador(String nombre, int vida, Tablero[] tablero) {
+    public Jugador(String nombre, int vida, Tablero[] tablero) {
         this.nombre = nombre;
         this.vida = vida;
         this.tablero = tablero;
