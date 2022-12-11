@@ -10,7 +10,7 @@ public class Menu {
 
         while (menuColocacionNaves != 3) {
             menuColocacionNaves = Integer.parseInt(JOptionPane.showInputDialog(
-                null, "Colocacion de naves\n + Seleccione como desea colocar las naves: \n"
+                null, "> Colocacion de naves <\n  Seleccione como desea colocar las naves: \n"
                 + "1. Automaticamente\n"
                 + "2. Manualmente\n"
                 + "3. Salir"));
@@ -54,11 +54,11 @@ public class Menu {
 
         while (menuAtaque != 4) {
             menuAtaque = Integer.parseInt(JOptionPane.showInputDialog(
-                null, "Menu de Ataque\n Seleccione una opcion:\n"
+                null, "> Menu de Ataque <\n Seleccione una opcion:\n"
                 + "1. Atacar\n"
                 + "2. Ver mi tablero de ataque\n"
                 + "3. Hacer trampa\n"
-                + "4. Salir"));
+                + "4. Saltar turno"));
 
                 if (menuAtaque == 1) {
                     //Ataca el jugador 1
@@ -75,6 +75,9 @@ public class Menu {
                     JOptionPane.showMessageDialog(null, "Trampa activada");
 
                     tableroEnemigo.mostrarTablero();
+                } else if (menuAtaque == 4) {
+                    //Salta de turno
+                    JOptionPane.showMessageDialog(null, "Salto de turno");
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Opcion no valida");
