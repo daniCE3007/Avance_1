@@ -20,22 +20,40 @@ public class Func {
             String opcionUsuario = JOptionPane.showInputDialog("Ingrese la fila"
                     + " en la que desea colocar su " + nombreNave + " (A - F): ");     
             
-            if (opcionUsuario.equals("A")) {
+           if (opcionUsuario.equals("A" )) {
+                fila = 3;
+                set = true;
+            } else if (opcionUsuario.equals("a")){
                 fila = 3;
                 set = true;
             } else if (opcionUsuario.equals("B")) {
                 fila = 5;
                 set = true;
+            } else if (opcionUsuario.equals("b")){
+                fila = 5;
+                set = true;
             } else if (opcionUsuario.equals("C")) {
+                fila = 7;
+                set = true;
+            } else if (opcionUsuario.equals("c")) {
                 fila = 7;
                 set = true;
             } else if (opcionUsuario.equals("D")) {
                 fila = 9;
                 set = true;
+            } else if (opcionUsuario.equals("d")) {
+                fila = 9;
+                set = true;
             } else if (opcionUsuario.equals("E")) {
                 fila = 11;
                 set = true;
+            } else if (opcionUsuario.equals("e")) {
+                fila = 11;
+                set = true;
             } else if (opcionUsuario.equals("F")) {
+                fila = 13;
+                set = true;
+            } else if (opcionUsuario.equals("f")) {
                 fila = 13;
                 set = true;
             } else {
@@ -94,23 +112,40 @@ public class Func {
         while (set == false) {
             String opcionUsuario = JOptionPane.showInputDialog("Ingrese "
                     + "la fila en la que realizar su ataque (A - F): ");     
-            
             if (opcionUsuario.equals("A")) {
+                fila = 3;
+                set = true;
+            } else if (opcionUsuario.equals("a")) {
                 fila = 3;
                 set = true;
             } else if (opcionUsuario.equals("B")) {
                 fila = 5;
                 set = true;
+            } else if (opcionUsuario.equals("b")) {
+                fila = 5;
+                set = true;
             } else if (opcionUsuario.equals("C")) {
+                fila = 7;
+                set = true;
+            } else if (opcionUsuario.equals("c")) {
                 fila = 7;
                 set = true;
             } else if (opcionUsuario.equals("D")) {
                 fila = 9;
                 set = true;
+            } else if (opcionUsuario.equals("d")) {
+                fila = 9;
+                set = true;
             } else if (opcionUsuario.equals("E")) {
                 fila = 11;
                 set = true;
+                } else if (opcionUsuario.equals("e")) {
+                fila = 11;
+                set = true;
             } else if (opcionUsuario.equals("F")) {
+                fila = 13;
+                set = true;
+            } else if (opcionUsuario.equals("f")) {
                 fila = 13;
                 set = true;
             } else {
