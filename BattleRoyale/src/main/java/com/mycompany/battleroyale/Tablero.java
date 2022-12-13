@@ -132,7 +132,20 @@ public class Tablero {
         System.out.println("");
         
     }
-
+    // Metodo para mostrar tablero enemigo
+    public void mostrarTableroEnemigo(){
+        System.out.println("Tablero Enemigo");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j]);
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+        System.out.println("*****************************************************");
+        System.out.println("");
+        
+    }
     // Metodo para mostrar el tablero de ataque
     public void mostrarTableroAtaque(){
         System.out.println("Tablero de ataque");

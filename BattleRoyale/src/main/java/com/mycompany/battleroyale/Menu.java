@@ -74,7 +74,7 @@ public class Menu {
                     //Muestra el tablero del enemigo
                     JOptionPane.showMessageDialog(null, "Trampa activada");
 
-                    tableroEnemigo.mostrarTablero();
+                    tableroEnemigo.mostrarTableroEnemigo();
                 } else if (menuAtaque == 4) {
                     //Salta de turno
                     JOptionPane.showMessageDialog(null, "Salto de turno");

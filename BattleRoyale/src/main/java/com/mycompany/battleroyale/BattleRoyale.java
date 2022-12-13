@@ -63,7 +63,7 @@ public class BattleRoyale {
 
                                 //Ataca la CPU
                                 System.out.println("Turno de " + jugador2.getNombre() + ":");
-                                Func.atacarRandom(jugador1.getTablero(), jugador2.getTablero());
+                                Menu.menuPartidaAtaque(jugador1.getTablero(), jugador2.getTablero());
                                 System.out.println("");
                                 
                             } while (jugador1.getTablero().getVida() != 0 && jugador2.getTablero().getVida() != 0);
@@ -103,7 +103,7 @@ public class BattleRoyale {
                                 System.out.println("Turno de " + cpu.getNombre() + ":");
                                 Func.atacarRandom(jugador1.getTablero(), cpu.getTablero());
                                 System.out.println("");
-                                JOptionPane.showMessageDialog(null, "Enemigo: " + cpu.getTablero().getVida());
+                                
 
                             } while (jugador1.getTablero().getVida() != 0 && cpu.getTablero().getVida() != 0);
 
