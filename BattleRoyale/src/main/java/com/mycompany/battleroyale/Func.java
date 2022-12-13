@@ -95,7 +95,7 @@ public class Func {
                 set = true;
             } else {
                 JOptionPane.showMessageDialog(null, "Ingrese "
-                        + "una fila valida");
+                        + " una fila valida");
                 set = false;
             }
         }
@@ -104,14 +104,15 @@ public class Func {
     }
    
 
-    //Funciones para convertir las posiciones de las filas y columnas en posiciones de matriz para atacar
+    //Funciones para convertir las posiciones de las filas y columnas en 
+    //posiciones de matriz para atacar
     public static int atacarPosFila(){
         int fila = 0;
         boolean set = false;
 
         while (set == false) {
             String opcionUsuario = JOptionPane.showInputDialog("Ingrese "
-                    + "la fila en la que realizar su ataque (A - F): ");     
+                    + " la fila en la que realizar su ataque (A - F): ");     
             if (opcionUsuario.equals("A")) {
                 fila = 3;
                 set = true;
@@ -150,7 +151,7 @@ public class Func {
                 set = true;
             } else {
                 JOptionPane.showMessageDialog(null, "Ingrese"
-                        + "una fila valida");
+                        + " una fila valida");
                 set = false;
             }
         }
@@ -164,7 +165,7 @@ public class Func {
 
         while (set == false) {
             String opcionUsuario = JOptionPane.showInputDialog("Ingrese "
-                    + "la columna en la que realizar su ataque (1 - 6): ");    
+                    + " la columna en la que realizar su ataque (1 - 6): ");    
             
             if (opcionUsuario.equals("1")) {
                 columna = 3;
@@ -209,17 +210,17 @@ public class Func {
                 if (i == fila && j == columna) {
                     if (tableroEnemigo.getMatriz()[i][j].equals("~")) {
                         tableroPropio.getMatrizAtaque()[i][j] = "X";
-                        JOptionPane.showMessageDialog(null, "Has"
+                        JOptionPane.showMessageDialog(null, "Has "
                                 + " fallado el ataque");
                     } else if (tableroEnemigo.getMatriz()[i][j].equals("*")) {
-                        JOptionPane.showMessageDialog(null, "Este"
+                        JOptionPane.showMessageDialog(null, "Este "
                                 + " barco ya esta destruido");
                     } else if (tableroEnemigo.getMatriz()[i][j].equals("1")) {
                         tableroPropio.getMatrizAtaque()[i][j] = "*";
                         ataqueExitoso = true;
                     } else if (!tableroEnemigo.getMatriz()[i][j].equals("~")) {
                         tableroPropio.getMatrizAtaque()[i][j] = "O";
-                        JOptionPane.showMessageDialog(null, "Has"
+                        JOptionPane.showMessageDialog(null, "Has "
                                 + "acertado el ataque");
                         ataqueExitoso = true;
                     }
@@ -231,61 +232,61 @@ public class Func {
         if(ataqueExitoso == true) {
             if (tableroEnemigo.getAlmirante().getPosFilas() == fila && 
                     tableroEnemigo.getAlmirante().getPosColumnas() == columna) {
-                // tableroEnemigo.getAlmirante().setVidas(tableroEnemigo.getAlmirante().getVidas() - 1);
+// tableroEnemigo.getAlmirante().setVidas(tableroEnemigo.getAlmirante().getVidas() - 1);
                 tableroEnemigo.getAlmirante().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getAlmirante().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getAlmirante().estaVivo();
                 }
             } else if (tableroEnemigo.getCapitan1().getPosFilas() == fila && 
                     tableroEnemigo.getCapitan1().getPosColumnas() == columna) {
-                // tableroEnemigo.getCapitan1().setVidas(tableroEnemigo.getCapitan1().getVidas() - 1);
+// tableroEnemigo.getCapitan1().setVidas(tableroEnemigo.getCapitan1().getVidas() - 1);
                 tableroEnemigo.getCapitan1().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getCapitan1().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getCapitan1().estaVivo();
                 }
             } else if (tableroEnemigo.getCapitan2().getPosFilas() == fila && 
                     tableroEnemigo.getCapitan2().getPosColumnas() == columna) {
-                // tableroEnemigo.getCapitan2().setVidas(tableroEnemigo.getCapitan2().getVidas() - 1);
+// tableroEnemigo.getCapitan2().setVidas(tableroEnemigo.getCapitan2().getVidas() - 1);
                 tableroEnemigo.getCapitan2().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getCapitan2().getVidas() == 0) {
-                    JOptionPane.showMessageDialog(null, "El"
+                    JOptionPane.showMessageDialog(null, "El "
                             + " barco ha sido destruido");
                     tableroEnemigo.getCapitan2().estaVivo();
                 }
             } else if (tableroEnemigo.getTeniente1().getPosFilas() == fila &&
                     tableroEnemigo.getTeniente1().getPosColumnas() == columna) {
-                // tableroEnemigo.getTeniente1().setVidas(tableroEnemigo.getTeniente1().getVidas() - 1);
+// tableroEnemigo.getTeniente1().setVidas(tableroEnemigo.getTeniente1().getVidas() - 1);
                 tableroEnemigo.getTeniente1().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente1().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getTeniente1().estaVivo();
                 }
             } else if (tableroEnemigo.getTeniente2().getPosFilas() == fila &&
                     tableroEnemigo.getTeniente2().getPosColumnas() == columna) {
-                // tableroEnemigo.getTeniente2().setVidas(tableroEnemigo.getTeniente2().getVidas() - 1);
+// tableroEnemigo.getTeniente2().setVidas(tableroEnemigo.getTeniente2().getVidas() - 1);
                 tableroEnemigo.getTeniente2().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente2().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getTeniente2().estaVivo();
                 }
             } else if (tableroEnemigo.getTeniente3().getPosFilas() == fila && 
                     tableroEnemigo.getTeniente3().getPosColumnas() == columna) {
-                // tableroEnemigo.getTeniente3().setVidas(tableroEnemigo.getTeniente3().getVidas() - 1);
+// tableroEnemigo.getTeniente3().setVidas(tableroEnemigo.getTeniente3().getVidas() - 1);
                 tableroEnemigo.getTeniente3().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente3().getVidas() == 0) {
-                    JOptionPane.showMessageDialog(null, "El"
+                    JOptionPane.showMessageDialog(null, "El "
                             + " barco ha sido destruido");
                     tableroEnemigo.getTeniente3().estaVivo();
                 }
@@ -497,8 +498,8 @@ public class Func {
                         ataqueExitoso = true;
                     } else if (!tableroEnemigo.getMatriz()[i][j].equals("~")) {
                         tableroPropio.getMatrizAtaque()[i][j] = "O";
-                        JOptionPane.showMessageDialog(null, "La CPU "
-                                + "ha acertado el ataque");
+                        JOptionPane.showMessageDialog(null, "La CPU"
+                                + " ha acertado el ataque");
                         ataqueExitoso = true;
                     }
                 }
@@ -514,7 +515,7 @@ public class Func {
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getAlmirante().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getAlmirante().estaVivo();
                 }
             } else if (tableroEnemigo.getCapitan1().getPosFilas() == fila && 
@@ -524,7 +525,7 @@ public class Func {
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getCapitan1().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getCapitan1().estaVivo();
                 }
             } else if (tableroEnemigo.getCapitan2().getPosFilas() == fila && 
@@ -533,7 +534,7 @@ public class Func {
                 tableroEnemigo.getCapitan2().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getCapitan2().getVidas() == 0) {
-                    JOptionPane.showMessageDialog(null, "El"
+                    JOptionPane.showMessageDialog(null, "El "
                             + " barco ha sido destruido");
                     tableroEnemigo.getCapitan2().estaVivo();
                 }
@@ -544,7 +545,7 @@ public class Func {
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente1().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getTeniente1().estaVivo();
                 }
             } else if (tableroEnemigo.getTeniente2().getPosFilas() == fila &&
@@ -554,7 +555,7 @@ public class Func {
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente2().getVidas() == 0) {
                     JOptionPane.showMessageDialog(null, "El "
-                            + "barco ha sido destruido");
+                            + " barco ha sido destruido");
                     tableroEnemigo.getTeniente2().estaVivo();
                 }
             } else if (tableroEnemigo.getTeniente3().getPosFilas() == fila && 
@@ -563,7 +564,7 @@ public class Func {
                 tableroEnemigo.getTeniente3().updateVidas();
                 tableroEnemigo.updateVidaGlobal();
                 if (tableroEnemigo.getTeniente3().getVidas() == 0) {
-                    JOptionPane.showMessageDialog(null, "El"
+                    JOptionPane.showMessageDialog(null, "El "
                             + " barco ha sido destruido");
                     tableroEnemigo.getTeniente3().estaVivo();
                 }

@@ -19,7 +19,7 @@ public class BattleRoyale {
         int menuPrincipal = 0;
         while (menuPrincipal != 2) {
             menuPrincipal = Integer.parseInt(JOptionPane.showInputDialog(
-                    null, "Menu Principal\n Seleccione una opcion: \n"
+                    null, "Menu Principal\nSeleccione una opcion: \n"
                     + "1. Iniciar Partida\n"
                     + "2. Salir"));
             //Iniciar partida
@@ -27,29 +27,34 @@ public class BattleRoyale {
                 String jugador1Nombre = JOptionPane.showInputDialog(
                         "Ingrese el nombre del jugador 1:");
 
-                Jugador jugador1 = new Jugador(jugador1Nombre, new Tablero(15,15));
+                Jugador jugador1 = new Jugador(jugador1Nombre, new Tablero(
+                        15,15));
                 jugador1.getTablero().rellenarTableros();
 
                 //Menu elegir contra quien jugar
                 int menuJugadorCPU = 0;
                 while (menuJugadorCPU != 2) {
                     menuJugadorCPU = Integer.parseInt(JOptionPane.showInputDialog(
-                        null, "Configuracion de partida\n + Seleccione contra quien desea jugar: \n"
+                        null, "Configuracion de partida\n"
+                                + "Seleccione contra quien desea jugar: \n"
                         + "1. Jugador 2\n"
                         + "2. CPU\n"
                         + "3. Salir"));
 
                         if (menuJugadorCPU == 1 ) {
                             //Crear jugador 2 y flujo jugador 2
-                            JOptionPane.showMessageDialog(null, "Turno de " + jugador1.getNombre() + ":");
+                            JOptionPane.showMessageDialog(null, "Turno "
+                                    + "de " + jugador1.getNombre() + ":");
                             Menu.menuColocarNaves(jugador1);
                             
                             //Se crea otro jugador
-                            JOptionPane.showMessageDialog(null, "Turno de Jugador 2:");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Turno de Jugador 2:");
                             String jugador2Nombre = JOptionPane.showInputDialog(
                                     "Ingrese el nombre del jugador 2:");
                             
-                            Jugador jugador2 = new Jugador(jugador2Nombre, new Tablero(15,15));
+                            Jugador jugador2 = new Jugador(jugador2Nombre, 
+                                    new Tablero(15,15));
                             jugador2.getTablero().rellenarTableros();
 
                             Menu.menuColocarNaves(jugador2);
@@ -57,16 +62,23 @@ public class BattleRoyale {
                             do {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
-                                System.out.println("Turno de " + jugador1.getNombre() + ":");
-                                Menu.menuPartidaAtaque(jugador2.getTablero(), jugador1.getTablero());
+                                System.out.println("Turno de " 
+                                        + jugador1.getNombre());
+                                Menu.menuPartidaAtaque(
+                                        jugador2.getTablero(), 
+                                        jugador1.getTablero());
                                 System.out.println("");
 
                                 //Ataca la CPU
-                                System.out.println("Turno de " + jugador2.getNombre() + ":");
-                                Menu.menuPartidaAtaque(jugador1.getTablero(), jugador2.getTablero());
+                                System.out.println("Turno de " 
+                                        + jugador2.getNombre());
+                                Menu.menuPartidaAtaque(
+                                        jugador1.getTablero(), 
+                                        jugador2.getTablero());
                                 System.out.println("");
                                 
-                            } while (jugador1.getTablero().getVida() != 0 && jugador2.getTablero().getVida() != 0);
+                            } while (jugador1.getTablero().getVida() != 0 &&
+                                    jugador2.getTablero().getVida() != 0);
                             if (jugador1.getTablero().getVida()==0){
                                 JOptionPane.showMessageDialog(null, 
                                         "Ganó "+ jugador2.getNombre());
@@ -84,28 +96,36 @@ public class BattleRoyale {
                             Menu.menuColocarNaves(jugador1);
 
                             //Se crea CPU
-                            CPU cpu = new CPU("CPU", new Tablero(15,15));
+                            CPU cpu = new CPU("CPU", new Tablero(15,
+                                    15));
                             cpu.getTablero().rellenarTableros();
                             
                             
                             //Se colocan las naves de la CPU aleatoriamente
                             cpu.getTablero().colocarNavesRandom();
-                            JOptionPane.showMessageDialog(null, "Naves de la CPU colocadas");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Naves de la CPU colocadas");
 
                             do {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
-                                System.out.println("Turno de " + jugador1.getNombre() + ":");
-                                Menu.menuPartidaAtaque(cpu.getTablero(), jugador1.getTablero());
+                                System.out.println("Turno de " 
+                                        + jugador1.getNombre());
+                                Menu.menuPartidaAtaque(
+                                        cpu.getTablero(), 
+                                        jugador1.getTablero());
                                 System.out.println("");
 
                                 //Ataca la CPU
-                                System.out.println("Turno de " + cpu.getNombre() + ":");
-                                Func.atacarRandom(jugador1.getTablero(), cpu.getTablero());
+                                System.out.println("Turno de " + cpu.getNombre());
+                                Func.atacarRandom(
+                                        jugador1.getTablero(), 
+                                        cpu.getTablero());
                                 System.out.println("");
                                 
 
-                            } while (jugador1.getTablero().getVida() != 0 && cpu.getTablero().getVida() != 0);
+                            } while (jugador1.getTablero().getVida() != 0 &&
+                                    cpu.getTablero().getVida() != 0);
 
                             if (jugador1.getTablero().getVida() == 0) {
                                 JOptionPane.showMessageDialog(null,
@@ -119,18 +139,21 @@ public class BattleRoyale {
                             
 
                         } else if (menuJugadorCPU == 3) {
-                            JOptionPane.showMessageDialog(null, "Volviedo...");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Volviedo...");
                         } else {
-                            JOptionPane.showMessageDialog(null, "Opcion no valida");
-                        }
-
+                            JOptionPane.showMessageDialog(null, 
+                                    "Opcion no valida");
+                        }                    
                 }
 
 
             } else if (menuPrincipal == 2) {
-                JOptionPane.showMessageDialog(null, "Gracias por jugar");
+                JOptionPane.showMessageDialog(null, 
+                        "Gracias por jugar");
             } else {
-                JOptionPane.showMessageDialog(null, "Opcion no valida");
+                JOptionPane.showMessageDialog(null, 
+                        "Opcion no valida");
             }
         } 
 

@@ -318,7 +318,8 @@ public class Tablero {
             }
         }
         
-        JOptionPane.showMessageDialog(null, "Naves colocadas manualmente con exito");
+        JOptionPane.showMessageDialog(null, "Naves colocadas"
+                + " manualmente con exito");
         
     }
 
@@ -461,7 +462,8 @@ public class Tablero {
             }
         }
         
-        JOptionPane.showMessageDialog(null, "Naves colocadas automaticamente con exito");
+        JOptionPane.showMessageDialog(null, "Naves colocadas "
+                + "automaticamente con exito");
         
     }
     

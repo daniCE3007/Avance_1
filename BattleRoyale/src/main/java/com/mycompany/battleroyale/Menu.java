@@ -10,7 +10,8 @@ public class Menu {
 
         while (menuColocacionNaves != 3) {
             menuColocacionNaves = Integer.parseInt(JOptionPane.showInputDialog(
-                null, "> Colocacion de naves <\n  Seleccione como desea colocar las naves: \n"
+                null, "> Colocacion de naves <\n  Seleccione como "
+                        + "desea colocar las naves: \n"
                 + "1. Automaticamente\n"
                 + "2. Manualmente\n"
                 + "3. Salir"));
@@ -40,15 +41,18 @@ public class Menu {
                     break;
 
                 } else if (menuColocacionNaves == 3) {
-                    JOptionPane.showMessageDialog(null, "Volviendo...");
+                    JOptionPane.showMessageDialog(null, 
+                            "Volviendo...");
                     break;
                 } else {
-                    JOptionPane.showMessageDialog(null, "Opcion no valida");
+                    JOptionPane.showMessageDialog(null, 
+                            "Opcion no valida");
                 }
         }
     }
 
-    public static void menuPartidaAtaque(Tablero tableroEnemigo, Tablero tableroPropio) {
+    public static void menuPartidaAtaque(Tablero tableroEnemigo,
+            Tablero tableroPropio) {
         //Menu colocacion de naves jugador
         int menuAtaque = 0;
 
@@ -68,19 +72,23 @@ public class Menu {
 
                 } else if (menuAtaque == 2) {
                     //Muestra el tablero de ataque del jugador 1
-                    JOptionPane.showMessageDialog(null, "Tablero de ataque");
+                    JOptionPane.showMessageDialog(null, 
+                            "Tablero de ataque");
                     tableroPropio.mostrarTableroAtaque();
                 } else if (menuAtaque == 3) {
                     //Muestra el tablero del enemigo
-                    JOptionPane.showMessageDialog(null, "Trampa activada");
+                    JOptionPane.showMessageDialog(null, 
+                            "Trampa activada");
 
                     tableroEnemigo.mostrarTableroEnemigo();
                 } else if (menuAtaque == 4) {
                     //Salta de turno
-                    JOptionPane.showMessageDialog(null, "Salto de turno");
+                    JOptionPane.showMessageDialog(null, 
+                            "Salto de turno");
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Opcion no valida");
+                    JOptionPane.showMessageDialog(null, 
+                            "Opcion no valida");
                 }
         }
     }
