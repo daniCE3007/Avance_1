@@ -62,15 +62,15 @@ public class BattleRoyale {
                             do {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
-                                System.out.println("Turno de " 
+                                JOptionPane.showMessageDialog(null,"Turno de " 
                                         + jugador1.getNombre());
                                 Menu.menuPartidaAtaque(
                                         jugador2.getTablero(), 
                                         jugador1.getTablero());
                                 System.out.println("");
 
-                                //Ataca la CPU
-                                System.out.println("Turno de " 
+                                //Ataca jugador 2
+                                JOptionPane.showMessageDialog(null,"Turno de " 
                                         + jugador2.getNombre());
                                 Menu.menuPartidaAtaque(
                                         jugador1.getTablero(), 
@@ -109,7 +109,7 @@ public class BattleRoyale {
                             do {
                                 //Se inicia el juego
                                 //Ataca el jugador 1
-                                System.out.println("Turno de " 
+                                JOptionPane.showMessageDialog(null,"Turno de " 
                                         + jugador1.getNombre());
                                 Menu.menuPartidaAtaque(
                                         cpu.getTablero(), 
@@ -117,7 +117,8 @@ public class BattleRoyale {
                                 System.out.println("");
 
                                 //Ataca la CPU
-                                System.out.println("Turno de " + cpu.getNombre());
+                                JOptionPane.showMessageDialog(null,
+                                        "Turno de " + cpu.getNombre());
                                 Func.atacarRandom(
                                         jugador1.getTablero(), 
                                         cpu.getTablero());
